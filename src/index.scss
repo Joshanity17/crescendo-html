@@ -1,0 +1,52 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+@import "bootstrap/scss/mixins/_breakpoints.scss";
+@import "swiper/swiper.scss";
+@import "swiper/components/navigation/navigation.scss";
+@import "swiper/components/pagination/pagination.scss";
+@import "swiper/components/scrollbar/scrollbar.scss";
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #001a7a;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.swiper-slide-next {
+  transform: perspective(500px) translateZ(-40px) translateY(-10px);
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      @each $prop, $abbrev in (width: w, height: h) {
+          @each $size, $length in $sizes {
+              .#{$abbrev}#{$infix}-#{$size} {
+                  #{$prop}: $length !important;
+              }
+          }
+      }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  body {
+    background-color: #EBEBEB;
+  }
+  .swiper-slide-next {
+    transform: unset;
+  }
+}
