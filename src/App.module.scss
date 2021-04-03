@@ -1,0 +1,258 @@
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+@import "bootstrap/scss/mixins/_breakpoints.scss";
+
+#navbar {
+    #desktop-nav {
+        #desktop-brand-logo {
+            height: 50px;
+        }
+
+        #brand-title {
+            border-right: 1px solid #cccccc;
+        }
+
+        #research-professional {
+            font-size: 11px;
+            color: #009bfa;
+        }
+
+        #platform {
+            color: #193989;
+        }
+
+        .nav-item {
+            color: black;
+        }
+    }
+}
+
+#banner {
+    background-color: #1a9cf7;
+
+    #rpp {
+        font-weight: 500;
+    }
+
+    #acme-wealth {
+        font-weight: 300;
+    }
+
+    .dot {
+        height: 3px;
+        width: 3px;
+        background-color: #85cbfb;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    #list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+}
+
+#insights {
+    box-shadow: 0px 5px rgba(0, 0, 0, 0.1);
+    #acme-insights {
+        font-weight: 300;
+    }
+
+    #acme-insights-sub {
+        font-weight: 300;
+    }
+
+    .slider-item {
+        background-color: white;
+        min-width: 300px;
+        border-bottom: 10px solid #008c82;
+
+        .image-container {
+            .image {
+                object-fit: cover;
+            }
+            .triangle {
+                &.top {
+                    width: 0;
+                    height: 0;
+                    border-top: 75px solid white;
+                    border-right: 75px solid transparent;
+                    top: 0;
+                    left: 0;
+                }
+                &.bottom {
+                    width: 0;
+                    height: 0;
+                    border-bottom: 75px solid white;
+                    border-left: 75px solid transparent;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+
+        .caption {
+            color: #008c82;
+        }
+    }
+}
+
+#who-we-are {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #1450d2;
+    #contact-us {
+        background: transparent;
+    }
+}
+
+#events {
+    background-color: #eaecee;
+    #upcoming-insights {
+        color: #001a7a !important;
+    }
+    #upcoming-insights-sub {
+        color: #707070;
+        font-weight: 300;
+    }
+    .event-item {
+        margin-top: 15px;
+        min-width: 300px;
+        background-color: #001a7a;
+        .details {
+            color: white;
+        }
+        .view-event-details {
+            background: transparent;
+        }
+        .event-when {
+            top: -15px;
+            left: 0;
+            .date {
+                min-width: 50px;
+                max-height: 50px;
+                background-color: white;
+                color: #008c82;
+                .month {
+                    margin-bottom: unset;
+                }
+            }
+            .triangle {
+                &.top {
+                    width: 0;
+                    height: 0;
+                    border-top: 75px solid white;
+                    border-right: 75px solid transparent;
+                    top: 0;
+                    left: 0;
+                }
+                &.bottom {
+                    width: 0;
+                    height: 0;
+                    border-bottom: 15px solid #c2c2c2;
+                    border-left: 15px solid transparent;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+        .location {
+            color: #008c82;
+            background-color: white;
+            bottom: 0;
+            right: 0;
+            left: 0;
+
+            .triangle {
+                &.top {
+                    width: 0;
+                    height: 0;
+                    border-top: 25px solid #001a7a;
+                    border-right: 25px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+#mobile-footer {
+    background-color: #cccccc;
+    #footer-brand-logo {
+        height: 75px;
+        background-color: #eaecee;
+    }
+
+    #site-links {
+        color: #193989;
+        border-bottom: 1px solid black;
+    }
+
+    .button {
+        background-color: #eaecee;
+        border: unset;
+        color: #707070;
+        margin-bottom: 10px;
+    }
+}
+
+#desktop-footer{
+    background-color: #707070;
+    color: #C6C6C6;
+}
+
+#brand-logo {
+    width: 100px;
+}
+
+#nav-button {
+    border: unset;
+    span {
+        color: #193989;
+    }
+}
+
+.text {
+    color: #ebebeb;
+}
+
+@include media-breakpoint-up(md) {
+    #navbar {
+        border-bottom: 10px solid #001254;
+    }
+
+    #banner {
+        background-color: unset;
+        overflow: hidden;
+
+        // #banner-content{
+        //     margin-left: 20vw;
+        // }
+
+        #rpp, #dot-container {
+            display: none;
+        }
+        #acme-wealth, #management-platform{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #list{
+            font-weight: lighter;
+        }
+        #desktop-background {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            object-fit: cover;
+            object-position: 0 -140px;
+        }
+    }
+
+    #insights {
+        #acme-insights, #acme-insights-sub {
+            color: black;
+        }
+    }
+}
